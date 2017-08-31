@@ -25,7 +25,7 @@ namespace TenpaySdk
         /// <param name="sClientRealIp">客户端真实IP</param>
         /// <param name="time_expire">订单失效时间</param>
         /// <returns></returns>
-        public static Message WapPay(TenpayConfig config, string body, string sOrderNo, int total_fee, string notify_url, string return_url, string sClientRealIp, string time_expire)
+        public static TenpayMessage WapPay(TenpayConfig config, string body, string sOrderNo, int total_fee, string notify_url, string return_url, string sClientRealIp, string time_expire)
         {
             var result = UniteOrderByWapPay(config, body, sOrderNo, total_fee.ToString(), notify_url, sClientRealIp, time_expire);
             if (result.state)
@@ -50,9 +50,9 @@ namespace TenpaySdk
         /// <param name="spbill_create_ip">APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP.</param>
         /// <param name="time_expire">订单失效时间(格式为yyyyMMddHHmmss)</param>
         /// <returns></returns>
-        public static Message UniteOrderByWapPay(TenpayConfig config, string body, string out_trade_no, string total_fee,string notify_url, string spbill_create_ip, string time_expire)
+        public static TenpayMessage UniteOrderByWapPay(TenpayConfig config, string body, string out_trade_no, string total_fee,string notify_url, string spbill_create_ip, string time_expire)
         {
-            var result = new Message();
+            var result = new TenpayMessage();
             try
             {
                 var requestParams = new Dictionary<string, string>();

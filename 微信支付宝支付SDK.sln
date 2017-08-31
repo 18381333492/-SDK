@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlipaySdk", "AlipaySdk\Alip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenpaySdk", "TenpaySdk\TenpaySdk.csproj", "{8EC5334C-DA02-4D83-91FE-20AC0A4C2AD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopSdk", "AopSdk\AopSdk.csproj", "{9C11CAE5-5188-4E71-825B-68FC3135728A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7383FCF6-0048-4B93-A798-F630AFA0F4CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8EC5334C-DA02-4D83-91FE-20AC0A4C2AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EC5334C-DA02-4D83-91FE-20AC0A4C2AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EC5334C-DA02-4D83-91FE-20AC0A4C2AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7383FCF6-0048-4B93-A798-F630AFA0F4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7383FCF6-0048-4B93-A798-F630AFA0F4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7383FCF6-0048-4B93-A798-F630AFA0F4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7383FCF6-0048-4B93-A798-F630AFA0F4CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

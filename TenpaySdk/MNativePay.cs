@@ -25,7 +25,7 @@ namespace TenpaySdk
         /// <param name="openid"></param>
         /// <param name="time_expire"></param>
         /// <returns></returns>
-        public static Message NativePay(TenpayConfig config, string body, string sOrderNo, int total_fee, string notify_url, string spbill_create_ip, string time_expire)
+        public static TenpayMessage NativePay(TenpayConfig config, string body, string sOrderNo, int total_fee, string notify_url, string spbill_create_ip, string time_expire)
         {
             var result = UniteOrderByNative(config, body, sOrderNo, total_fee.ToString(), notify_url, spbill_create_ip, time_expire);
             return result;
@@ -53,9 +53,9 @@ namespace TenpaySdk
         /// <param name="spbill_create_ip">Native支付填调用微信支付API的机器IP</param>
         /// <param name="time_expire">订单失效时间(格式为yyyyMMddHHmmss)</param>
         /// <returns></returns>
-        public static Message UniteOrderByNative(TenpayConfig config,string body, string out_trade_no, string total_fee, string notify_url, string spbill_create_ip,string time_expire)
+        public static TenpayMessage UniteOrderByNative(TenpayConfig config,string body, string out_trade_no, string total_fee, string notify_url, string spbill_create_ip,string time_expire)
         {
-            var result = new Message();
+            var result = new TenpayMessage();
             try
             {
                 var requestParams = new Dictionary<string, string>();

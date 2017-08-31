@@ -19,9 +19,9 @@ namespace TenpaySdk
         /// <param name="config">配置信息</param>
         /// <param name="out_trade_no">商户订单号</param>
         /// <returns></returns>
-        public static Message QueryOrderPayState(TenpayConfig config, string out_trade_no)
+        public static TenpayMessage QueryOrderPayState(TenpayConfig config, string out_trade_no)
         {
-            var result = new Message();
+            var result = new TenpayMessage();
             try
             {
                 var requestParams = new Dictionary<string, string>();
@@ -89,9 +89,9 @@ namespace TenpaySdk
         /// <param name="out_trade_no">商户订单号</param>
         /// <param name="out_refund_no">商户退款订单号</param>
         /// <returns></returns>
-        public static Message QueryOrderRefundState(TenpayConfig config, string out_trade_no = null, string out_refund_no = null)
+        public static TenpayMessage QueryOrderRefundState(TenpayConfig config, string out_trade_no = null, string out_refund_no = null)
         {
-            var result = new Message();
+            var result = new TenpayMessage();
             try
             {
                 var requestParams = new Dictionary<string, string>();
@@ -169,9 +169,9 @@ namespace TenpaySdk
         /// <param name="refund_fee">退款金额</param>
         /// <param name="refund_desc">退款原因</param>
         /// <returns></returns>
-        public static Message ApplyRefund(TenpayConfig config, string out_trade_no, string out_refund_no,int total_fee,int refund_fee,string refund_desc)
+        public static TenpayMessage ApplyRefund(TenpayConfig config, string out_trade_no, string out_refund_no,int total_fee,int refund_fee,string refund_desc)
         {
-            var result = new Message();
+            var result = new TenpayMessage();
             try
             {
                 var requestParams = new Dictionary<string, string>();

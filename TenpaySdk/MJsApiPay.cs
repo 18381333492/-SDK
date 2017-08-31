@@ -24,7 +24,7 @@ namespace TenpaySdk
         /// <param name="openid">微信用户在商户对应appid下的唯一标识</param>
         /// <param name="time_expire">订单失效时间</param>
         /// <returns></returns>
-        public static Message JsApiPay(TenpayConfig config, string body, string sOrderNo, int total_fee, string notify_url,  string spbill_create_ip,string openid, string time_expire)
+        public static TenpayMessage JsApiPay(TenpayConfig config, string body, string sOrderNo, int total_fee, string notify_url,  string spbill_create_ip,string openid, string time_expire)
         {
             var result = UniteOrderByJsApi(config, body, sOrderNo, total_fee.ToString(), notify_url, spbill_create_ip, openid, time_expire);
             return result;
@@ -61,10 +61,10 @@ namespace TenpaySdk
         /// <param name="spbill_create_ip">APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP.</param>
         /// <param name="time_expire">订单失效时间(格式为yyyyMMddHHmmss)</param>
         /// <returns></returns>
-        public static Message UniteOrderByJsApi(TenpayConfig config, string body, string out_trade_no, string total_fee,
+        public static TenpayMessage UniteOrderByJsApi(TenpayConfig config, string body, string out_trade_no, string total_fee,
                                                                     string notify_url, string spbill_create_ip,string openid, string time_expire)
         {
-            var result = new Message();
+            var result = new TenpayMessage();
             try
             {
                 var requestParams = new Dictionary<string, string>();

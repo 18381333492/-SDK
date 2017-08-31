@@ -76,9 +76,9 @@ namespace TenpaySdk
     }
 
     /// <summary>
-    /// 统一下单的消息model
+    /// 统一的消息model
     /// </summary>
-    public class Message
+    public class TenpayMessage
     {
         public bool state = false;
         public string data;

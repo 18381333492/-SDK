@@ -164,6 +164,20 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlipaySdk\AlipaySdk.csproj">
+      <Project>{56509da1-8a59-40f2-8f91-55fdf0898de8}</Project>
+      <Name>AlipaySdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AopSdk\AopSdk.csproj">
+      <Project>{9c11cae5-5188-4e71-825b-68fc3135728a}</Project>
+      <Name>AopSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TenpaySdk\TenpaySdk.csproj">
+      <Project>{8ec5334c-da02-4d83-91fe-20ac0a4c2ad1}</Project>
+      <Name>TenpaySdk</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

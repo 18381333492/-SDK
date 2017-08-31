@@ -42,6 +42,7 @@ namespace AlipaySdk
                 model.Subject = subject;//订单描述
                 model.OutTradeNo = out_trade_no;
                 model.TotalAmount = total_amount;//订单支付金额
+                model.ProductCode = "QUICK_WAP_WAY";
                 if (!string.IsNullOrEmpty(timeout_express))
                     model.TimeoutExpress = timeout_express;
                 if (!string.IsNullOrEmpty(quit_url))

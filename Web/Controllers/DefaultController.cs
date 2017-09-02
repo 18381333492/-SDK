@@ -19,11 +19,19 @@ namespace Web.Controllers
 
         public void AliPayWapPay()
         {
-            AlipayConfig config = new AlipayConfig();
-            config.alipay_public_key = alipay_public_key;
-            config.merchant_private_key = merchant_private_key;
-            config.app_id = "2017081108144704";
-            var res=AlipayMode.WapPay(config, DateTime.Now.ToString("yyyyMMddHHmmssfff"), "测试订单", "0.01", null, null);
+            //AlipayConfig config = new AlipayConfig();
+            //config.alipay_public_key = alipay_public_key;
+            //config.merchant_private_key = merchant_private_key;
+            //config.app_id = "2017081108144704";
+            //var res=AlipayMode.WapPay(config, DateTime.Now.ToString("yyyyMMddHHmmssfff"), "测试订单", "0.01", null, null);
+        }
+
+ 
+        public ActionResult Test()
+        {
+            //允许跨域
+            Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:13165");
+            return Content("success");
         }
     }
 }

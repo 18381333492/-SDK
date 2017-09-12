@@ -31,16 +31,16 @@ namespace TenpaySdk
             return result;
         }
  
-        /// <summary>
-        /// 将支付链接生成二维码
-        /// </summary>
-        /// <param name="code_url"></param>
-        /// <returns></returns>
-        public static byte[] MakeCode(string code_url)
-        {
-            var code = TenpayHelp.MakeCode(code_url);
-            return code;
-        }
+        ///// <summary>
+        ///// 将支付链接生成二维码
+        ///// </summary>
+        ///// <param name="code_url"></param>
+        ///// <returns></returns>
+        //public static byte[] MakeCode(string code_url)
+        //{
+        //    var code = TenpayHelp.MakeCode(code_url);
+        //    return code;
+        //}
 
         /// <summary>
         /// Native支付统一下单接口

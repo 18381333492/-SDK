@@ -26,20 +26,20 @@ namespace TenpaySdk
         /// </summary>
         /// <param name="sContent"></param>
         /// <returns></returns>
-        public static byte[] MakeCode(string sContent)
-        {
-            QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
-            qrCodeEncoder.QRCodeVersion = 0;
-            qrCodeEncoder.QRCodeScale = 7;
-            if (!string.IsNullOrEmpty(sContent))
-            {
-                Bitmap newBitmap = qrCodeEncoder.Encode(sContent);
-                MemoryStream ms = new MemoryStream();
-                newBitmap.Save(ms, ImageFormat.Jpeg);
-                return ms.ToArray();
-            }
-            return null;
-        }
+        //public static byte[] MakeCode(string sContent)
+        //{
+        //    QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
+        //    qrCodeEncoder.QRCodeVersion = 0;
+        //    qrCodeEncoder.QRCodeScale = 7;
+        //    if (!string.IsNullOrEmpty(sContent))
+        //    {
+        //        Bitmap newBitmap = qrCodeEncoder.Encode(sContent);
+        //        MemoryStream ms = new MemoryStream();
+        //        newBitmap.Save(ms, ImageFormat.Jpeg);
+        //        return ms.ToArray();
+        //    }
+        //    return null;
+        //}
 
         /// <summary>
         /// 从微信请求的参数中获取字典集合

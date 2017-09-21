@@ -44,7 +44,8 @@ namespace Web.Controllers
         /// </summary>
         public void Logs()
         {
-            LogsHelper.init();
+            string path = AppDomain.CurrentDomain.BaseDirectory + "log4net.config";
+            LogsHelper.init(path);
             var logger = LogsHelper.Instance.GetLogger("InfoAppender");
             logger.Info("fsdfsfdfs");
         }
@@ -76,11 +77,14 @@ namespace Web.Controllers
         /// <summary>
         /// 初始化配置文件
         /// </summary>
-        public static void init()
+        public static void init(string sPath=null)
         {
-            log4net.Config.XmlConfigurator.Configure();
+            if (string.IsNullOrEmpty(sPath))
+                log4net.Config.XmlConfigurator.Configure();
+            else
+                log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(sPath));
             storedPath = LogManager.GetRepository();
-            appenders=storedPath.GetAppenders();
+            appenders = storedPath.GetAppenders();
         }
 
 

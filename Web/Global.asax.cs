@@ -13,6 +13,10 @@ namespace Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+
+            string path = AppDomain.CurrentDomain.BaseDirectory + "log4net.config";
+            LogsHelper.init(path);
         }
     }
 }

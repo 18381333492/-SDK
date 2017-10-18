@@ -9,6 +9,7 @@ using log4net;
 using log4net.Appender;
 using log4net.Repository;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Web.Controllers
 {
@@ -73,6 +74,21 @@ namespace Web.Controllers
                 return Json(new { success = true, data=string.Empty, info = "登录成功" });
             }
 
+        }
+
+        /// <summary>
+        /// 获取首页数据
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetHomeInfo()
+        {
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            JObject job = new JObject();
+            job.Add(new JProperty("totalBalance", 15000.00));
+            job.Add(new JProperty("cashBalance", 5800.00));
+            job.Add(new JProperty("rebateBalance", 15000.00));
+            job.Add(new JProperty("certification", true));
+            return Json(new { success = true, data = job.ToString(), info = "获取数据成功" });
         }
 
         /// <summary>

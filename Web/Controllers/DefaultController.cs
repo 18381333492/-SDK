@@ -8,6 +8,7 @@ using System.IO;
 using log4net;
 using log4net.Appender;
 using log4net.Repository;
+using Newtonsoft.Json;
 
 namespace Web.Controllers
 {
@@ -35,8 +36,43 @@ namespace Web.Controllers
         public ActionResult Test()
         {
             //允许跨域
-            Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:13165");
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
             return Content("success");
+        }
+
+
+        /// <summary>
+        /// 获取手机验证码
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetPhoneCode(string sPhone)
+        {
+            var code = new Random().Next(10000, 99999);
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            Session[sPhone] = code;
+            return Json(new { success=true,data= code,info="获取成功" });
+        }
+
+
+        /// <summary>
+        /// 登录接口
+        /// </summary>
+        /// <param name="sPhone"></param>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public ActionResult Login(string sPhone,string code)
+        {
+            var mm = Session[sPhone];
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            if (mm==null|| mm.ToString()!= code)
+            {
+                return Json(new { success = false, data = string.Empty, info ="验证码错误" });
+            }
+            else
+            {
+                return Json(new { success = true, data=string.Empty, info = "登录成功" });
+            }
+
         }
 
         /// <summary>
@@ -45,20 +81,6 @@ namespace Web.Controllers
         public void Logs()
         {
 
-
-            var logger = LogsHelper.Instance.GetLogger("InfoAppender");
-            try
-            {
-                int intStr = Convert.ToInt32("fsdfdsf");
-            }
-            catch (Exception ex)
-            {
-                //logHelper.Error(ex.ToString());
-                //logHelper.Debug(ex.ToString());
-                //logHelper.Fatal(ex.ToString());
-                //logHelper.Info(ex.ToString());
-                logger.Info(ex.Message,ex);
-            }
         }
     }
 

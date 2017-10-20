@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>支付</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <script src="common.js"></script>
+</head>
+<body ontouchstart style="background-color:#eee">
+   <label>
+       <input type="radio" name="pay" value="2" checked="checked" />微信支付
+       <br />
+       <input type="radio" name="pay" value="1" />支付宝支付
+   </label>
+
+    <a class="weui-btn weui-btn_primary bing">确认支付</a>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //1-支付宝 2-微信
+        //支付事件绑定
+        $('.bing').on("click", function () {
+            var pay_type = $('input[name=pay]:checked').val();
+            var orderInfo = localStorage.getItem();
+            if (orderInfo) {
+                orderInfo = JSON.parse(orderInfo);
+                orderInfo.pay_type = pay_type;
+                client.ajax.ajaxRequest("/HWServer/PayRequestHandler.ashx", orderInfo,function (r) {
+                    location.href = r.url;
+               });
+            }
+        });
+
+    })
+</script>

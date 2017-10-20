@@ -135,6 +135,7 @@
     <Content Include="HWPage\common.js" />
     <Content Include="HWPage\hwpay.html" />
     <Content Include="HWPage\hwpayment.html" />
+    <Content Include="HWPage\list.html" />
     <Content Include="HWPage\login.js" />
     <Content Include="login.js" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />

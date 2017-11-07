@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Web
 {
-    public class LogsHelper
+    public  class LogsHelper
     {
 
         private static ILoggerRepository storedPath = null;

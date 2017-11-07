@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>手机充值</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <script src="/js/common.js" type="text/javascript"></script>
+    
+</head>
+<body ontouchstart style="background-color: #eee">
+   <form enctype="multipart/form-data"  action="http://localhost:34577/upload/picture.ashx?dir=system"  method="post">
+       <input type="file" name="picture"/>
+       <input type="submit" value="提交" />
+   </form> 
+</body>
+</html>
+<script type="text/javascript">
+</script>
+<script type="text/javascript">
+
+    function handleParam(obj) {
+        //obj;要传的参数必须是对象的形式
+        var keyArray = [];
+        for (var key in obj) {
+            keyArray.push(key);
+        }
+        keyArray.sort();
+        obj.sign = "";//签名的值
+        for (var i = 0; i < keyArray.length; i++) {
+            if (obj[keyArray[i]]) {
+                //参数的值不为空才能拼接
+                obj.sign = obj.sign + keyArray[i] + "=" + encodeURI(obj[keyArray[i]]) + "&";
+            }
+        }
+        obj.sign = md5(obj.sign + "key=" + key值);//(你自己替换)
+        obj.sign = obj.sign.toLowerCase();//转化成小写
+        return obj;
+    }
+
+</script>

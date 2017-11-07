@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketSdk", "WebSocketSdk\WebSocketSdk.csproj", "{7ABC93B3-0DA4-4C6D-BC2D-F8D237DAD9AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSdk", "LogSdk\LogSdk.csproj", "{A4FB39CD-6210-4F30-9019-4A9CED806B4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7ABC93B3-0DA4-4C6D-BC2D-F8D237DAD9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ABC93B3-0DA4-4C6D-BC2D-F8D237DAD9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ABC93B3-0DA4-4C6D-BC2D-F8D237DAD9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4FB39CD-6210-4F30-9019-4A9CED806B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4FB39CD-6210-4F30-9019-4A9CED806B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4FB39CD-6210-4F30-9019-4A9CED806B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4FB39CD-6210-4F30-9019-4A9CED806B4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

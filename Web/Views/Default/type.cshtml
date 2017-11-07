@@ -1,0 +1,196 @@
+﻿
+@{
+    Layout = null;
+}
+
+    <style>
+        .weui-cell:before {
+            right: 15px;
+        }
+
+        .mobile_focus {
+            font-weight: 600;
+        }
+        /*style的第一种样式*/
+        .able_ul {
+            list-style: none;
+            width: 100%;
+        }
+
+            .able_ul li {
+                float: left;
+                border: 1px solid green;
+                height: 70px;
+                text-align: center;
+                width: 29.1%;
+                line-height: 17.5px;
+                border-radius: 5px;
+                margin-right: 5%;
+                margin-bottom: 10px;
+                color: green;
+            }
+
+                .able_ul li p {
+                    margin-top: 17.5px;
+                }
+
+                .able_ul li span {
+                    font-size: 10px;
+                }
+        /*style的第二种样式*/
+        .unable_ul {
+            list-style: none;
+            width: 100%;
+        }
+
+            .unable_ul li {
+                float: left;
+                border: 1px solid #CACACA;
+                height: 70px;
+                text-align: center;
+                width: 29.1%;
+                line-height: 70px;
+                border-radius: 5px;
+                margin-right: 5%;
+                margin-bottom: 10px;
+                color: #CACACA;
+            }
+
+                .unable_ul li span {
+                    display: none;
+                    font-size: 10px;
+                }
+
+        ul li:nth-child(3n+0) {
+            margin-right: 0%;
+        }
+
+        .liuliang_unable {
+            float: left;
+            border: 1px solid #CACACA;
+            height: 70px;
+            text-align: center;
+            width: 29.1%;
+            line-height: 70px;
+            border-radius: 5px;
+            margin-right: 5%;
+            margin-bottom: 10px;
+            color: #CACACA;
+        }
+
+        .liuliang_able {
+            float: left;
+            border: 1px solid green;
+            height: 70px;
+            text-align: center;
+            width: 29.1%;
+            line-height: 70px;
+            border-radius: 5px;
+            margin-right: 5%;
+            margin-bottom: 10px;
+            color: green;
+        }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: green;
+            opacity: 1;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: green;
+            opacity: 1;
+        }
+
+        input:-ms-input-placeholder {
+            color: green;
+            opacity: 1;
+        }
+
+        input::-webkit-input-placeholder {
+            color: green;
+            opacity: 1;
+        }
+    </style>
+    <div class="weui-cells weui-cells_form" style="margin-top: 0px;">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <input class="weui-input mobile_blur" type="tel" name="mobile" maxlength="13" placeholder="请输入手机号码" autofocus
+                       style="height: 30px; font-size: 21px;">
+                <input class="weui-input" id="tip" type="text" style="height: 16px; font-size: 12px;
+                    color: #ccc;display: inherit" readonly="readonly" value="移动 联通 电信">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p style="height: 18px; font-size: 14px; color: #cacaca; margin-bottom: 10px;">
+                    充话费
+                </p>
+                <div style="display: block; width: 100%">
+                    <ul class="unable_ul">
+                        <li>
+                            <p>
+                                30元
+                            </p>
+                            <span>售价:99.99</span>
+                        </li>
+                        <li>
+                            <p>
+                                50元
+                            </p>
+                            <span>售价:99.99</span>
+                        </li>
+                        <li>
+                            <p>
+                                100元
+                            </p>
+                            <span>售价:99.99</span>
+                        </li>
+                        <li>
+                            <p>
+                                200元
+                            </p>
+                            <span>售价:99.99</span>
+                        </li>
+                        <li>
+                            <p>
+                                300元
+                            </p>
+                            <span>售价:99.99</span>
+                        </li>
+                        <li>
+                            <p>
+                                500元
+                            </p>
+                            <span>售价:99.99</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p style="height: 18px; font-size: 14px; color: #cacaca; margin-bottom: 10px;">
+                    充流量
+                </p>
+                <div style="display: block; width: 100%">
+                    <p id="other" class="liuliang_unable">
+                        选流量包
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--bottom-->
+    <div class="hw_bottom" style="font-size: 12px; background-color: #eee; padding-top: 3px;
+        color: #0B346E; text-align: center; position: fixed; bottom: 0px; width: 100%">
+        <a class="recharge_record">充值记录</a>
+        <!--<a style="display: inline-block; border-right: 1px solid #0B346E;height: 10px; width: 1px;"></a>-->
+        <a style="display: inline-block; background-color: #0B346E; margin: 0px 3px; margin-right: 4px;height: 10px; width: 1px;"></a>
+        <a class="kehu_help">客服帮助</a>
+        <a style="display: inline-block; background-color: #0B346E; margin: 0px 3px; margin-right: 4px;height: 10px; width: 1px;"></a>
+        <a href="tel:4008111801" style="color:#0B346E">客服电话</a>
+        <div style="margin-bottom: 5px;">
+            <a style="display: inline-block; color: #91989F;">手机充值服务由四川千行你我科技有限公司提供</a>
+        </div>
+    </div>
+

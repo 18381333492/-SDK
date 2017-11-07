@@ -133,16 +133,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="HWPage\common.js" />
+    <Content Include="HWPage\HtmlPage1.html" />
+    <Content Include="HWPage\hworderdetail.html" />
     <Content Include="HWPage\hwpay.html" />
     <Content Include="HWPage\hwpayment.html" />
     <Content Include="HWPage\list.html" />
     <Content Include="HWPage\login.js" />
+    <Content Include="HWPage\paySuccess.html" />
+    <Content Include="HWPage\wx.png" />
+    <Content Include="HWPage\zfb.png" />
     <Content Include="login.js" />
+    <Content Include="projects\index.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="log4net.config" />
+    <Content Include="log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -173,6 +181,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Default\type.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,6 +201,10 @@
     <ProjectReference Include="..\AopSdk\AopSdk.csproj">
       <Project>{9c11cae5-5188-4e71-825b-68fc3135728a}</Project>
       <Name>AopSdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogSdk\LogSdk.csproj">
+      <Project>{a4fb39cd-6210-4f30-9019-4a9ced806b4c}</Project>
+      <Name>LogSdk</Name>
     </ProjectReference>
     <ProjectReference Include="..\TenpaySdk\TenpaySdk.csproj">
       <Project>{8ec5334c-da02-4d83-91fe-20ac0a4c2ad1}</Project>

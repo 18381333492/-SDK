@@ -1,7 +1,4 @@
-﻿@{
-    Layout = null;
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN" style="height:100%">
 <head>
     <meta charset="UTF-8">
@@ -22,12 +19,13 @@
                 <h1>页面一</h1>
             </div>
             <div class="weui-tab__bd-item">
-               
+                <h1>页面二</h1>
             </div>
             <div class="weui-tab__bd-item">
-               
+                <h1>页面三</h1>
             </div>
             <div class="weui-tab__bd-item">
+                <h1>页面四</h1>
             </div>
         </div>
 
@@ -68,16 +66,5 @@
         var index = $(this).index();
         $(this).addClass("weui-bar__item--on").siblings().removeClass("weui-bar__item--on");
         $('.weui-tab__bd div').eq(index).addClass("weui-tab__bd-item--active").siblings().removeClass("weui-tab__bd-item--active");
-        if ($('.weui-tab__bd-item--active').html().trim() == "") {
-            $.showLoading();
-            $.ajax({
-                url: '/Default/type',
-                type: 'get',
-                success: function (res) {
-                    $('.weui-tab__bd-item--active').html(res);
-                    $.hideLoading();
-                }
-            })
-        }
     })
 </script>

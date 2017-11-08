@@ -10,7 +10,7 @@ using log4net.Appender;
 using log4net.Repository;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using LogSdk;
+
 
 namespace Web.Controllers
 {
@@ -41,17 +41,17 @@ namespace Web.Controllers
 
         public void Trace()
         {
-            var logger=LoggerManager.Instance.GetLogger("Web");
-            try
-            {
-                int p = 0;
-                int s = 6 / p;
-            }
-            catch (Exception e)
-            {
-                logger.Info(e.Message);
-                logger.Fatal(e);
-            }
+            //var logger=LoggerManager.Instance.GetLogger("Web");
+            //try
+            //{
+            //    int p = 0;
+            //    int s = 6 / p;
+            //}
+            //catch (Exception e)
+            //{
+            //    logger.Info(e.Message);
+            //    logger.Fatal(e);
+            //}
         }
 
         public void refund() { }

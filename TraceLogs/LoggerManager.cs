@@ -5,8 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogSdk
+namespace TraceLogs
 {
+    /// <summary>
+    /// 轻量型的文本日志记录
+    /// 适合接口和一些小的程序
+    /// </summary>
     public class LoggerManager
     {
         private static LoggerManager instance;
@@ -22,19 +26,18 @@ namespace LogSdk
                 return instance;
             }
         }
-        
 
-        public ILogger GetLogger(string dir)
+        /// <summary>
+        /// 获取logger
+        /// </summary>
+        /// <param name="dir"></param>
+        /// <param name="cache">是否缓存</param>
+        /// <returns></returns>
+        public ILogger GetLogger()
         {
             if (logger == null)
-                logger= new Logger(dir);
-            else
-            {
-                if(logger.dir!= dir)
-                    logger = new Logger(dir);
-            }
+                logger = new Logger();
             return logger;
-
         }
     }
 }

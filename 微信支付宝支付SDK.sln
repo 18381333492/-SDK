@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketSdk", "WebSocketSdk\WebSocketSdk.csproj", "{7ABC93B3-0DA4-4C6D-BC2D-F8D237DAD9AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSdk", "LogSdk\LogSdk.csproj", "{A4FB39CD-6210-4F30-9019-4A9CED806B4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLogs", "TraceLogs\TraceLogs.csproj", "{A4FB39CD-6210-4F30-9019-4A9CED806B4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

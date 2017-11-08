@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Configuration;
 
-namespace LogSdk
+namespace TraceLogs
 {
     public class LogerTraceListener : TraceListener
     {
@@ -21,54 +21,30 @@ namespace LogSdk
         /// </summary>
         private string basePath;
 
-        private string dir;
-
         /// <summary>
         /// 构造函数
         /// </summary>
-        public LogerTraceListener(string dir)
+        public LogerTraceListener()
         {
             string root = ConfigurationManager.AppSettings["logger"];
             if (string.IsNullOrEmpty(root)) root = "logs";
-            this.dir = dir;
-            this.basePath = string.Format("{0}{1}\\{2}", AppDomain.CurrentDomain.BaseDirectory, root, dir);
+            this.basePath = string.Format("{0}{1}", AppDomain.CurrentDomain.BaseDirectory, root);
         }
 
-
         /// <summary>
-        /// Write
+        /// 抽象函数必须继承
         /// </summary>
         public override void Write(string message)
         {
-            message = Format(message, "");
-            File.AppendAllText(m_fileName, message);
+           
         }
 
         /// <summary>
-        /// Write
-        /// </summary>
-        public override void Write(object obj)
-        {
-            string message = Format(obj, "");
-            File.AppendAllText(m_fileName, message);
-        }
-
-        /// <summary>
-        /// WriteLine
-        /// </summary>
-        public override void WriteLine(object obj)
-        {
-            string message = Format(obj, "");
-            File.AppendAllText(m_fileName, message);
-        }
-
-        /// <summary>
-        /// WriteLine
+        /// 抽象函数必须继承
         /// </summary>
         public override void WriteLine(string message)
         {
-            message = Format(message, "");
-            File.AppendAllText(m_fileName, message);
+
         }
 
         /// <summary>
@@ -77,15 +53,6 @@ namespace LogSdk
         public override void WriteLine(object obj, string category)
         {
             string message = Format(obj, category);
-            File.AppendAllText(m_fileName, message);
-        }
-
-        /// <summary>
-        /// WriteLine
-        /// </summary>
-        public override void WriteLine(string message, string category)
-        {
-            message = Format(message, category);
             File.AppendAllText(m_fileName, message);
         }
 
@@ -101,7 +68,7 @@ namespace LogSdk
             //需要写入的日志
             StringBuilder builder = new StringBuilder();
             builder.AppendFormat("[{0}] ", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            builder.AppendFormat("[{0}] ",this.dir);
+            builder.AppendFormat("[{0}] ", category);
             if (obj is Exception)
             {
                 var ex = (Exception)obj;

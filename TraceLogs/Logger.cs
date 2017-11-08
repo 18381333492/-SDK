@@ -5,21 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogSdk
+namespace TraceLogs
 {
     public class Logger:ILogger
     {
-
-        public string dir;
         /// <summary>
         /// 初始化构造函数移除默认的监听
         /// </summary>
         /// <param name="dir"></param>
-        public Logger(string dir)
+        public Logger()
         {
-            this.dir = dir;
             Trace.Listeners.Clear();
-            Trace.Listeners.Add(new LogerTraceListener(dir));
+            Trace.Listeners.Add(new LogerTraceListener());
         }
 
         public void Info(object msg)
@@ -41,5 +38,6 @@ namespace LogSdk
         {
             Trace.WriteLine(msg, LoggerLevel.Fatal.ToString());
         }
+
     }
 }

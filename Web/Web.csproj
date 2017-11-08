@@ -202,10 +202,6 @@
       <Project>{9c11cae5-5188-4e71-825b-68fc3135728a}</Project>
       <Name>AopSdk</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LogSdk\LogSdk.csproj">
-      <Project>{a4fb39cd-6210-4f30-9019-4a9ced806b4c}</Project>
-      <Name>LogSdk</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TenpaySdk\TenpaySdk.csproj">
       <Project>{8ec5334c-da02-4d83-91fe-20ac0a4c2ad1}</Project>
       <Name>TenpaySdk</Name>

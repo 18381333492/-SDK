@@ -180,7 +180,7 @@ namespace TenpaySdk
                 requestParams.Add("nonce_str", TenpayConfig.nonce_str());
                 requestParams.Add("sign_type", "MD5");
                 requestParams.Add("out_trade_no", out_trade_no);
-                requestParams.Add("out_trade_no", out_refund_no);
+                requestParams.Add("out_refund_no", out_refund_no);
                 requestParams.Add("total_fee", total_fee.ToString());
                 requestParams.Add("refund_fee", refund_fee.ToString());
                 if (!string.IsNullOrEmpty(refund_desc))

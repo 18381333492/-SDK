@@ -143,6 +143,7 @@
     <Content Include="HWPage\wx.png" />
     <Content Include="HWPage\zfb.png" />
     <Content Include="login.js" />
+    <Content Include="mylib\common.client.js" />
     <Content Include="projects\index.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -155,6 +156,7 @@
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="theme\index.html" />
     <Content Include="Web.config" />
     <Content Include="Views\Default\Index.cshtml" />
   </ItemGroup>
@@ -192,6 +194,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="theme\css\" />
+    <Folder Include="theme\images\" />
+    <Folder Include="theme\js\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlipaySdk\AlipaySdk.csproj">

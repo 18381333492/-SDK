@@ -1,0 +1,1460 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 强制让文档与设备的宽度保持1：1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <script type="text/javascript">
+
+    </script>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            /*border: 1px solid red;*/
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 540px;
+            height: 100%;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            overflow: hidden;
+            Center slide text vertically 
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .section1{background: url(images/beijing_1.png);background-size: 100% 100%;}
+        .img1_1{
+            position: absolute;
+            top: -5%;
+            left: 0%;
+            width: 100%;
+            height: 110%
+        }
+        .img1_2{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            bottom: 5%;
+            right: 5%;
+            width: 90%;
+            height: 90%;
+            opacity: 0.5;
+        }
+        .img1_3{
+            position: absolute;
+            top: 7%;
+            left: 9%;
+            bottom: 7%;
+            right: 9%;
+            width: 82%;
+            height: 86%;
+        }
+        .img1_4{
+            position: absolute;
+            top: 23%;
+            left: -18%;
+            transform:rotate(140deg);
+            width: 40%;
+            height: 25%;
+            /*opacity: 0;*/
+        }
+        .img1_5{
+            position: absolute;
+            top: 33%;
+            left: -15%;
+            transform:rotate(125deg);
+            width: 40%;
+            height: 25%;            
+        }
+        @keyframes yezib{
+            0% {
+                top: 45%;
+                left: -55%;
+            }
+            100% {
+                top: 33%;
+                left: -15%;
+            }
+        }
+        .yezib{
+            animation: yezib 2s;
+        }
+        .img1_6{
+            position: absolute;
+            left: 27%;
+            bottom: -10%;
+            transform:rotate(90deg);
+            width: 45%;
+            height: 25%;
+        }
+        
+        .img1_7{
+            position: absolute;
+            right: 0%;
+            bottom: -4%;
+            width: 45%;
+            height: 25%;
+        }
+        @keyframes yezid{
+            0% {
+                right: 0%;
+                bottom: -50%;
+            }
+            100% {
+                right: 0%;
+                bottom: -4%;
+            }
+        }
+        .yezid{
+            animation: yezid 3s;
+        }
+        .img1_8{
+            position: absolute;
+            right: -10%;
+            bottom: 10%;
+            transform:rotate(-130deg);
+            width: 40%;
+            height: 20%;
+        }
+        @keyframes yezie{
+            0% {
+                right: -50%;
+                bottom: 10%;
+            }
+            100% {
+                right: -10%;
+                bottom: 10%;
+            }
+        }
+        .yezie{
+            animation: yezie 2.5s;
+        }
+        .img1_9{
+            position: absolute;
+            left: 25%;
+            width: 50%;
+            top: 14%;
+            display: none;
+        }
+        .img1_10{
+            position: absolute;
+            bottom: 38%;
+            left: 25%;
+            width: 50%;
+            display: none;
+        }
+        .img1_11{
+            position: absolute;
+            bottom: 30%;
+            left: 25%;
+            width: 50%;
+            display: none;
+        }
+        @keyframes tu{
+            0% {
+                top: 107%;
+            }
+            100% {
+                top: 7%;
+            }
+        }
+        .tu1{
+            animation: tu 1s;
+        }
+        .img2_1{
+            position: absolute;
+            width: 240%;
+            height: 106%;
+            left: 0%;
+        }
+        .img2_2{
+            position: absolute;
+            width: 60%;
+            height: 106%;
+            left: 75%;
+            background-color: rgb(35,25,77);
+            transform:rotate(-2deg);
+            display: none;
+        }
+        .img2_3{
+            position: absolute;
+            left: 60%;
+            top: 20%;
+            background-color: rgb(35,25,77);
+            font-size: 12px;
+            color: rgba(222, 184, 129, 0.843137);
+            /*display: none;*/
+        }
+        #content1{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            color: rgba(222, 184, 129, 0.843137);
+        }
+        .img2_4{
+            position: absolute;
+            left: 100%;
+            bottom: -15%;
+            width: 70%;
+            height: 42%;
+            animation:circle 10s infinite linear;
+        }
+        @-webkit-keyframes circle{
+            0%{ 
+                transform:rotate(0deg); 
+            }
+            100%{ 
+                transform:rotate(360deg); 
+            }
+        }
+        .img3_1{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+        }
+        .img3_2{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .img3_2 ul{
+            /*position: absolute;*/
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .img3_2 ul li{
+            /*position: absolute;*/
+            opacity: 0;
+            width: 100%;
+            /*height: 10%;*/
+        }
+        #content2{
+            /*position: absolute;*/
+            width: 8.4%;
+            height: 100%;
+            font-size: 16px;
+            color: rgba(222, 184, 129, 0.843137);
+        }
+        .img3_2 ul li:last-child{
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            width: 100%;
+            height: 20%;
+            opacity: 1;
+        }
+        .img3_3{
+            width: 100%;
+            height: 100%;
+        }
+        .img4_1{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+        }
+        .img4_2{
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            opacity: 0;
+            text-align: left;
+            /*background-color: red;*/
+        }
+        .img4_3{
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            opacity: 0;
+            text-align: left;
+            /*background-color: red;*/
+        }
+        @-webkit-keyframes leftin1{
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 10%;
+            }
+        }
+        .leftin1{
+            animation: leftin1 1s ease-out;
+            /*animation-timing-function:ease-out;*/
+        }
+        .img4_4{
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: left;
+            /*background-color: red;*/
+        }
+        .img4_5{
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: left;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        @-webkit-keyframes leftin2{
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 10%;
+            }
+        }
+        .leftin2{
+            animation: leftin2 1s ease-out;
+            /*animation-delay: 1s;*/
+            /*animation-timing-function:ease-out;*/
+        }
+        .img4_6{
+            position: absolute;
+            top: 25%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 8%;
+            text-align: left;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        @-webkit-keyframes leftin3{
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 10%;
+            }
+        }
+        .leftin3{
+            animation: leftin2 1s ease-out;
+            /*animation-delay: 1.5s;*/
+            /*animation-timing-function:ease-out;*/
+        }
+        .img4_7{
+            position: absolute;
+            top: 33%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: left;
+            /*background-color: red;*/
+        }
+        .img4_8{
+            position: absolute;
+            top: 38%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: left;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img4_9{
+            position: absolute;
+            top: 43%;
+            left: 10%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: left;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        @-webkit-keyframes leftin4{
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 10%;
+            }
+        }
+        .leftin4{
+            animation: leftin4 1s ease-out;
+            /*animation-delay: 2s;*/
+            /*animation-timing-function:ease-out;*/
+        }
+        .img4_10{
+            position: absolute;
+            top: 62%;
+            left: -8%;
+            width: 110%;
+            height: 50%;
+            transform: rotate(-8deg);
+            opacity: 0;
+        }
+        @-webkit-keyframes rightin1{
+            0% {
+                left: 32%;
+            }
+            100% {
+                left: -8%;
+            }
+        }
+        .rightin1{
+            animation: rightin1 1s ease-out;
+        }
+        .img4_11{
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 90%;
+            height: 50%;
+            opacity: 0;
+        }
+        @-webkit-keyframes rightin2{
+            0% {
+                left: 45%;
+            }
+            100% {
+                left: 5%;
+            }
+        }
+        .rightin2{
+            animation: rightin2 1s ease-out;
+            /*animation-delay: 2s;*/
+            /*animation-timing-function:ease-out;*/
+        }
+        .img5_1{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+        }
+        .img5_2{
+            position: absolute;
+            top: 5%;
+            left: 0%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            opacity: 0;
+            text-align: center;
+            /*background-color: red;*/
+        }
+        .img5_3{
+            position: absolute;
+            top: 10%;
+            left: 0%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            opacity: 0;
+            text-align: center;
+            /*background-color: red;*/
+        }
+        .img5_4{
+            position: absolute;
+            top: 15%;
+            left: 0%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: center;
+            /*opacity: 0;*/
+            /*background-color: red;*/
+        }
+        .img5_5{
+            position: absolute;
+            top: 20%;
+            left: 0%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: center;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img5_6{
+            position: absolute;
+            top: 28%;
+            left: 0%;
+            width: 100%;
+            font-size: 20px;
+            height: 8%;
+            text-align: center;
+            /*opacity: 0;*/
+            /*background-color: red;*/
+        }
+        .img5_7{
+            position: absolute;
+            top: 33%;
+            left: 0%;
+            width: 100%;
+            font-size: 20px;
+            height: 5%;
+            text-align: center;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img5_8{
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            width: 100%;
+            height: 50%;
+            text-align: center;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_2{
+            position: absolute;
+            top: 20%;
+            left: -13%;
+            width: 80%;
+            height: 80%;
+            /*text-align: right;*/
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_3{
+            position: absolute;
+            top: 5%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_4{
+            position: absolute;
+            top: 10%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_5{
+            position: absolute;
+            top: 15%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            /*opacity: 0;*/
+            /*background-color: red;*/
+        }
+        .img6_6{
+            position: absolute;
+            top: 20%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_7{
+            position: absolute;
+            top: 28%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            /*opacity: 0;*/
+            /*background-color: red;*/
+        }
+        .img6_8{
+            position: absolute;
+            top: 33%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_9{
+            position: absolute;
+            top: 38%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_10{
+            position: absolute;
+            top: 43%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img6_11{
+            position: absolute;
+            top: 48%;
+            right: 15%;
+            width: 80%;
+            height: 80%;
+            text-align: right;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img7_1{
+            position: absolute;
+            top: 45%;
+            right: 4%;
+            width: 85%;
+            height: 55%;
+            opacity: 0;
+            /*background-color: red;*/
+        }
+        .img7_2{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 5%;
+            left: 0%;
+            opacity: 0;
+        }
+        .img7_3{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 10%;
+            left: 0%;
+            opacity: 0;
+        }
+        .img7_4{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 15%;
+            left: 0%;
+            /*opacity: 0;*/
+        }
+        .img7_5{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 20%;
+            left: 0%;
+            opacity: 0;
+        }
+        .img7_6{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 27%;
+            left: 0%;
+            /*opacity: 0;*/
+        }
+        .img7_7{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 32%;
+            left: 0%;
+            opacity: 0;
+        }
+        .section8{background: url(images/beijing_1.png);background-size: 100% 100%;}
+        .img8_1{
+            position: absolute;
+            top: -5%;
+            left: 0%;
+            width: 100%;
+            height: 110%
+        }
+        .img8_2{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            bottom: 5%;
+            right: 5%;
+            width: 90%;
+            height: 90%;
+            opacity: 0.5;
+        }
+        .img8_3{
+            position: absolute;
+            top: 7%;
+            left: 9%;
+            bottom: 7%;
+            right: 9%;
+            width: 82%;
+            height: 86%;
+        }
+        .img8_4{
+            position: absolute;
+            top: 23%;
+            left: -18%;
+            transform:rotate(140deg);
+            width: 40%;
+            height: 25%;
+            /*opacity: 0;*/
+        }
+        .img8_5{
+            position: absolute;
+            top: 33%;
+            left: -15%;
+            transform:rotate(125deg);
+            width: 40%;
+            height: 25%;            
+        }
+        
+        .img8_6{
+            position: absolute;
+            left: 27%;
+            bottom: -10%;
+            transform:rotate(90deg);
+            width: 45%;
+            height: 25%;
+        }
+        
+        .img8_7{
+            position: absolute;
+            right: 0%;
+            bottom: -4%;
+            width: 45%;
+            height: 25%;
+        }
+        @keyframes yezia{
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: -18%;
+            }
+        }
+        .yezia{
+             animation: yezia 1.5s;
+        }
+        @keyframes yezib{
+            0% {
+                top: 45%;
+                left: -55%;
+            }
+            100% {
+                top: 33%;
+                left: -15%;
+            }
+        }
+        .yezib{
+            animation: yezib 2s;
+        }
+        @keyframes yezic{
+            0% {
+                left: 27%;
+                bottom: -50%;
+            }
+            100% {
+                left: 27%;
+                bottom: -10%;
+            }
+        }
+        .yezic{
+            animation: yezic 3.5s;
+        }
+        @keyframes yezid{
+            0% {
+                right: 0%;
+                bottom: -50%;
+            }
+            100% {
+                right: 0%;
+                bottom: -4%;
+            }
+        }
+        .yezid{
+            animation: yezid 3s;
+        }
+        .img8_8{
+            position: absolute;
+            right: -10%;
+            bottom: 10%;
+            transform:rotate(-130deg);
+            width: 40%;
+            height: 20%;
+        }
+        @keyframes yezie{
+            0% {
+                right: -50%;
+                bottom: 10%;
+            }
+            100% {
+                right: -10%;
+                bottom: 10%;
+            }
+        }
+        .yezie{
+            animation: yezie 2.5s;
+        }
+        @keyframes biankuang{
+            0% {
+                top: -100%;
+                left: 5%;
+            }
+            100% {
+                top: 5%;
+                left: 5%;
+                bottom: 5%;
+                right: 5%;
+            }
+        }
+        .biankuang{
+            animation: biankuang 1s;
+        }
+        @keyframes tu{
+            0% {
+                top: 107%;
+            }
+            100% {
+                top: 7%;
+            }
+        }
+        .tu1{
+            animation: tu 1s;
+        }
+        .wenzi1{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            opacity: 0;
+            /*white-space: pre;*/
+            /*line-height: 100%;*/
+        }
+        .wenzi8_1{
+            position: relative;
+            width: 50px;
+            font-size: 64px;
+            color: #fff;
+            top: 10%;
+        }
+        .wenzi2{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            opacity: 0;
+            /*white-space: pre;*/
+            /*line-height: 100%;*/
+        }
+        .wenzi8_2{
+            position: relative;
+            width: 50px;
+            font-size: 64px;
+            color: #fff;
+            top: 20%;
+            /*opacity: 0;*/
+        }
+        .img8_9{
+            position: absolute;
+            width: 35%;
+            height: 11%;
+            top: 11%;
+            left: 32%;
+            opacity: 0;
+        }
+        .img8_10{
+            position: absolute;
+            width: 220%;
+            height: 25%;
+            top: 25%;
+            left: 10%;
+            opacity: 0;
+        }
+        .img8_11{
+            background: url(images/daoxibeijing.jpg);
+            position: absolute;
+            width: 70%;
+            height: 10%;
+            top: 52%;
+            left: 15%;
+            opacity: 0;
+        }
+        .img8_11_1{
+            position: absolute;
+            width: 100%;
+            height: 90%;
+            top: 0%;
+            left: 0%;
+            /*opacity: 0;*/
+        }
+        .img_hengxian1{
+            background: url(images/hengxian.png); 
+            background-size: 100% 100%;
+            position: absolute;
+            width: 70%;
+            height: 5%;
+            top: 47%;
+            left: 15%;
+            opacity: 0;
+        }
+        .img_hengxian2{
+            background: url(images/hengxian.png); 
+            background-size: 100% 100%;
+            position: absolute;
+            width: 70%;
+            height: 5%;
+            top: 62%;
+            left: 15%;
+            opacity: 0;
+        }
+        .wenzi3{
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            top: 72%;
+            left: 0%;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            opacity: 0;
+        }
+        .btn{
+            background: url(images/bgmBtn.svg);
+            background-size: 100% 100%;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 6%;
+            right: 6%;
+            z-index: 999;
+        }
+        .btnonclick{
+            animation:circle 1s infinite linear;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="btn"></div>
+    <audio id="video" autoplay src="http://res1.eqh5.com/o_1aj4i1djr340g3h1v2t1e6j1vga9.mp3"></audio>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide section1">
+            <img class="img1_1" src="images/1-2.png">
+            <img class="img1_2" src="images/1_biankuang.png">
+            <img class="img1_3" src="images/1-1.png">
+            <img class="img1_4" src="images/shuye_1.png">
+            <img class="img1_5" src="images/shuye_2.png">
+            <img class="img1_6" src="images/shuye_4.png">
+            <img class="img1_7" src="images/shuye_2.png">
+            <img class="img1_8" src="images/shuye_3.png">
+            <img class="img1_9" src="images/xiaozhenbao.png">
+            <img class="img1_10" src="images/yaoqinghan.png">
+            <img class="img1_11" src="images/yingwenzi.png">
+        </div>
+        <div class="swiper-slide section2">
+            <img class="img2_1" src="images/ertubeijing.jpg" alt="">
+            <div class="img2_2"></div>
+            <div class="img2_3">
+                <span id="content1" style="white-space:pre">
+            </div>
+            <img class="img2_4" src="images/ertuhua.png" alt="">
+        </div>
+        <div class="swiper-slide section3">
+            <img class="img3_1" src="images/santubeijing.png" alt="">
+            <div class="img3_2">
+                <ul style="height:100%;">
+                    <li style="font-size: 64px;color: rgb(171, 124, 68);">丰盛/美好</li>
+                    <li style="font-size: 20px;color:rgb(2, 21, 120);height:10%;">我们用<span style="font-weight: bold;">工匠</span>精神</li>
+                    <li style="line-height: inherit; font-size: 12px; background-color: initial; color: rgb(207, 157, 83);"><span id="content2" style="white-space:pre"></span></li>
+                    <li style="font-size: 20px;font-family: fangzheng_sht;;color:rgb(2, 21, 120);">是人生中最幸福的滋味</li>
+                    <li><img style="width:70%" src="images/santuwenzia.png" alt=""></li>
+                    <br>
+                    <li style="font-size: 20px; font-family: fangzheng_fst;color:rgb(2, 21, 120);">烹调精致美食</li>
+                    <li><img style="width:30%" src="images/santuwenzib.png" alt=""></li>
+                    <li><img style="width:70%" src="images/santuwenzic.png" alt=""></li>
+                    <li><img class="img3_3" src="images/santudi.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="swiper-slide section4">
+            <img class="img4_1" src="images/santubeijing.png" alt="">
+            <img class="img4_10" src="images/4-1.png" alt="">
+            <img class="img4_11" src="images/4-2.png" alt="">
+            <div class="img4_2"><span style="font-size: 20px;color:rgb(2, 21, 120);">控得住<span style="font-weight: bold;">混搭风</span></span></div>
+            <div class="img4_3"><span style="font-size: 20px;color:rgb(2, 21, 120);">聊得了<span style="font-weight: bold;">穿越剧</span></span></div>
+            <div class="img4_4"><span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span></div>
+            <div class="img4_5"><span style="font-size: 20px;color:rgb(2, 21, 120);">比爷爷年纪更大</span></div>
+            <div class="img4_6"><span style="font-size: 32px; font-family: fangzheng_sht; color: rgb(171, 124, 68);">珍宝雀笼点心</span></div>
+            <div class="img4_7"><span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span></div>
+            <div class="img4_8"><span style="font-size: 20px;color:rgb(2, 21, 120);">还能给味觉</span></div>
+            <div class="img4_9"><span style="font-size: 20px;color:rgb(2, 21, 120);">奏一曲<span style="font-weight: bold;">交响乐</span></span></div>
+        </div>
+        <div class="swiper-slide section5">
+            <img class="img5_1" src="images/santubeijing.png" alt="">
+            <img class="img5_8" src="images/5_1.png" alt="">
+            <div class="img5_2"><span style="font-size: 20px; line-height: 20px; color:rgb(2, 21, 120);">在进入谈判桌之前</span></div>
+            <div class="img5_3"><span style="font-size: 20px; line-height: 20px; color:rgb(2, 21, 120);">不如先一起喝早茶</span></div>
+            <div class="img5_4"><span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span></div>
+            <div class="img5_5"><span style="font-size: 32px; line-height: 32px; font-family: fangzheng_sht;color:rgb(171, 124, 68);">金箔翡翠虾饺皇</span></div>
+            <div class="img5_6"><span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span></div>
+            <div class="img5_7"><span style="font-size: 20px; line-height: 20px;color:rgb(2, 21, 120);">台上<span style="font-weight: bold;">敌手</span>－台下<span style="font-weight: bold;">好友</span></span></div>
+        </div>
+        <div class="swiper-slide section6">
+            <img class="img5_1" src="images/santubeijing.png" alt="">
+            <img class="img6_2" src="images/6_1.png" alt="">
+            <div class="img6_3">
+                <span style="font-size: 20px; line-height: 20px; color: rgb(2, 21, 120); letter-spacing: 0px; background-color: initial;">千万别问</span>
+            </div>
+            <div class="img6_4">
+                <span style="font-size: 20px; line-height: 20px; color: rgb(2, 21, 120);">该如何优雅地吃</span>
+            </div>
+            <div class="img6_5">
+                <span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span>
+            </div>
+            <div class="img6_6">
+                <span style="font-size: 32px; line-height: 32px; color: rgb(171, 124, 68); letter-spacing: 0px; background-color: initial; font-family: fangzheng_sht;">鲜果拿破仑</span>
+            </div>
+            <div class="img6_7">
+                <span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span>
+            </div>
+            <div class="img6_8">
+                <span style="font-size: 20px; line-height: 20px; color: rgb(2, 21, 120); letter-spacing: 0px; background-color: initial;">抛开形象</span>
+            </div>
+            <div class="img6_9">
+                 <span style="line-height: 20px; font-weight: bold; font-size: 24px; color: rgb(2, 21, 120);">一口闷</span>
+            </div>
+            <div class="img6_10">
+                <span style="font-size: 20px; color: inherit; line-height: inherit; letter-spacing: 0px; background-color: initial; color: rgb(2, 21, 120);">懂吃的人</span>
+            </div>
+            <div class="img6_11">
+                <span style="font-size: 24px; font-weight: bold; color: rgb(2, 21, 120);">最优雅</span>
+            </div>
+        </div>
+        <div class="swiper-slide section7">
+            <img class="img5_1" src="images/santubeijing.png" alt="">
+            <img class="img7_1" src="images/7_1.png" alt="">
+            <div class="img7_2">
+                <span style="font-size: 20px; line-height: 20px; color: rgb(2, 21, 120); letter-spacing: 0px; background-color: initial;">可以把话心情全部赶跑</span>
+            </div>
+            <div class="img7_3">
+                <span style="font-size: 20px; line-height: 20px; color: rgb(2, 21, 120); letter-spacing: 0px; background-color: initial;">也能让好心情变更美的</span>
+            </div>
+            <div class="img7_4">
+                <span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span>
+            </div>
+            <div class="img7_5">
+                <span style="font-size: 32px; line-height: 32px; color: rgb(171, 124, 68); letter-spacing: 0px; background-color: initial; font-family: fangzheng_sht;">象生法国鹅肝酥</span>
+            </div>
+            <div class="img7_6">
+                <span style="font-size: 20px;color:rgb(2, 21, 120);"><span style="font-weight: bold;">/</span></span>
+            </div>
+            <div class="img7_7">
+                <span style="font-size: 20px; line-height: 20px; color:rgb(2, 21, 120);"><span style="font-weight: bold;">我的你</span>－肯定喜欢</span>
+            </div>
+        </div>
+        <div class="swiper-slide section8">
+            <img class="img8_1" src="images/beijing_8.png">
+            <img class="img8_2" src="images/2_biankuang.png">
+            <img class="img8_3" src="images/8_1.jpg">
+            <img class="img8_4" src="images/shuye_1.png">
+            <img class="img8_5" src="images/shuye_2.png">
+            <img class="img8_6" src="images/shuye_4.png">
+            <img class="img8_7" src="images/shuye_2.png">
+            <img class="img8_8" src="images/shuye_3.png">
+            <div class="wenzi1">
+                <span class="wenzi8_1">珍<br>贵<br>的<br>你</span>
+            </div>
+            <div class="wenzi2">
+                <span class="wenzi8_2">久<br>等<br>了</span>
+            </div>
+            <img class="img8_9" src="images/xiaozhenbao3.png" alt="">
+            <img class="img8_10" src="images/521.png" alt="">
+            <div  class="img8_11">
+                <img class="img8_11_1" src="images/daoxi.png" alt="">
+            </div>
+            <div class="img_hengxian1"></div>
+            <div class="img_hengxian2"></div>
+            <div class="wenzi3"><span>邀请你与我共享美食（只限观看的你</span></div>
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <!-- <div class="swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+    
+    <!-- 如果需要滚动条 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+</div>  
+<script src="js/swiper-3.4.2.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/typed.min.js"></script>
+<script>
+var swiper = new Swiper ('.swiper-container', {
+    direction: 'vertical',
+    // loop: true,
+    
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    onInit: function(swiper){
+        //Swiper初始化了
+        //alert(swiper.activeIndex);提示Swiper的当前索引
+        console.log("onInit"+swiper.activeIndex);
+        $(".img1_2").addClass("biankuang").css("opacity",0.5);
+        $(".img1_3").addClass("tu1").css("opacity",1);
+        $(".img1_4").addClass("yezia").css("opacity",1);
+        $(".img1_5").addClass("yezib").css("opacity",1);
+        $(".img1_6").addClass("yezic").css("opacity",1);
+        $(".img1_7").addClass("yezid").css("opacity",1);
+        $(".img1_8").addClass("yezie").css("opacity",1);
+        $(".img1_9").delay(3000).fadeIn();
+        $(".img1_10").delay(4000).fadeIn();
+        $(".img1_11").delay(3500).fadeIn();
+    },
+    onSlideChangeEnd:function(swiper){ 
+        console.log("onSlideChangeEnd"+swiper.activeIndex);
+        switch(swiper.activeIndex){
+            case 0:
+            $(".img1_2").stop(true,true).addClass("biankuang").css("opacity",0.5);
+            $(".img1_3").stop(true,true).addClass("tu1").css("opacity",1);
+            $(".img1_4").stop(true,true).addClass("yezia").css("opacity",1);
+            $(".img1_5").stop(true,true).addClass("yezib").css("opacity",1);
+            $(".img1_6").stop(true,true).addClass("yezic").css("opacity",1);
+            $(".img1_7").stop(true,true).addClass("yezid").css("opacity",1);
+            $(".img1_8").stop(true,true).addClass("yezie").css("opacity",1);
+            $(".img1_9").stop(true,true).delay(3000).fadeIn();
+            $(".img1_10").stop(true,true).delay(4000).fadeIn();
+            $(".img1_11").stop(true,true).delay(3500).fadeIn();
+            break;
+            case 1:
+            $(".img2_1").animate({left:"-84%"},1000,function(){
+                $(".img2_2").stop(true,true).css("display","block").animate({left:"51%"},1000).animate({left:"60%"},250).animate({left:"51%"},200).animate({left:"55%"},150).animate({left:"51%"},100,function(){
+                    $(".img2_4").stop(true,true).animate({left:"70%"});
+                    // $(".img2_3").stop(true,true).show(1000);
+                    $("#content1").animate({opacity:1});
+                    $("#content1").fadeIn();
+                    $("#content1").text("");
+                    $("#content1").typed({
+                        strings: ["欧阳应霁曾说：\n\n不在于食材的珍稀 \n烹调的复杂 \n也不在于装潢的奢华 \n\n只有跟对的人在一起 \n彼此相伴、分享美味 \n才最是珍贵"],
+                        typeSpeed: 200,
+                        loopcount: false,
+                        showCursor: false,
+                        attr:null,
+                        // cursorChar: "~~~",
+                    });
+                });
+            });
+            break;
+            case 2:
+            // $(".img3_3").addClass("bounceInUp animated").animate({opacity:"1"});
+            $(".img3_2").children().children().eq(0).delay(7000).animate({opacity:"1"});
+            $(".img3_2").children().children().eq(3).delay(7500).animate({opacity:"1"});
+            $(".img3_2").children().children().eq(1).delay(8000).animate({opacity:"1"});
+            $(".img3_2").children().children().eq(5).delay(8500).animate({opacity:"1"});
+            $(".img3_2").children().children().eq(4).delay(9000).animate({opacity:"1"});
+            $(".img3_2").children().children().eq(6).delay(9500).animate({opacity:"1"});
+            $(".img3_2").children().children().eq(7).delay(10000).animate({opacity:"0"},function(){
+                $(this).addClass("bounceInDown animated").css("opacity",1);
+            });
+            $(".img3_2").children().children().eq(8).delay(10500).animate({opacity:"1"},function(){
+                $(this).addClass("shake animated");
+            });
+            $(".img3_2").children().children().eq(2).css("opacity","1");
+            $("#content2").fadeIn();
+            $("#content2").typed({
+                strings: ["对的人，固然重要\n但我们认为\n美味是幸福最好的奖赏"],
+                typeSpeed: 200,
+                // loopcount: false,
+                showCursor: false,
+                attr:null,
+            });
+            $("#content2").delay(6500).fadeOut();
+            break;
+            case 3:
+            $(".img4_10").addClass("rightin1").css("opacity",1);
+            $(".img4_11").addClass("rightin2").css("opacity",1);
+            $(".img4_2").delay(500).animate({"opacity":1},0,function(){
+                $(this).addClass("leftin1");
+            });
+            $(".img4_3").delay(500).animate({"opacity":1},0,function(){
+                $(this).addClass("leftin1");
+            });
+            $(".img4_5").delay(1000).animate({"opacity":1},0,function(){
+                $(this).addClass("leftin2");
+            });
+            $(".img4_6").delay(1500).animate({"opacity":1},0,function(){
+                $(this).addClass("leftin3");
+            });
+            $(".img4_8").delay(2000).animate({"opacity":1},0,function(){
+                $(this).addClass("leftin3");
+            });
+            $(".img4_9").delay(2500).animate({"opacity":1},0,function(){
+                $(this).addClass("leftin3");
+            });
+            break;
+            case 4:
+            $(".img5_8").addClass("fadeInDown animated");
+            $(".img5_2").delay(1000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInUp animated");
+                });
+            $(".img5_3").delay(1000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInUp animated");
+                });
+            $(".img5_5").delay(1500).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInUp animated");
+                });
+            $(".img5_7").delay(2000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInUp animated");
+                });
+            break;
+            case 5:
+            $(".img6_2").addClass("fadeInLeft animated");
+            $(".img6_3").delay(1000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            $(".img6_4").delay(1000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            $(".img6_6").delay(1500).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            $(".img6_8").delay(2000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            $(".img6_9").delay(2000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            $(".img6_10").delay(2500).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            $(".img6_11").delay(2500).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInRight animated");
+                });
+            break;
+            case 6:
+            $(".img7_1").addClass("fadeInUp animated");
+            $(".img7_2").delay(1000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInDown animated");
+                });
+            $(".img7_3").delay(1000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInDown animated");
+                });
+            $(".img7_5").delay(1500).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInDown animated");
+                });
+            $(".img7_7").delay(2000).animate({"opacity":1},0,function(){
+                    $(this).addClass("fadeInDown animated");
+                });
+            break;
+            case 7:
+            $(".img8_2").stop(true,true).addClass("biankuang").css("opacity",0.5);
+            $(".img8_3").stop(true,true).addClass("tu1").css("opacity",1);
+            $(".img8_4").stop(true,true).addClass("yezia").css("opacity",1);
+            $(".img8_5").stop(true,true).addClass("yezib").css("opacity",1);
+            $(".img8_6").stop(true,true).addClass("yezic").css("opacity",1);
+            $(".img8_7").stop(true,true).addClass("yezid").css("opacity",1);
+            $(".img8_8").stop(true,true).addClass("yezie").css("opacity",1);
+            $(".wenzi1").stop(true,true).delay(3000).animate({opacity:1},0,function(){
+                $(this).addClass("fadeIn animated");
+            }).delay(1000).animate({opacity:0},1000,function(){
+                $(this).removeClass("fadeIn animated");
+            });
+            $(".wenzi2").stop(true,true).delay(5500).animate({opacity:1},0,function(){
+                $(this).addClass("fadeIn animated");
+            }).delay(1000).animate({opacity:0},1000,function(){
+                $(this).removeClass("fadeIn animated");
+                $(".img8_9").stop(true,true).delay(1000).animate({opacity:1},0,function(){
+                    $(this).fadeIn();
+                });
+                $(".img8_10").stop(true,true).delay(1500).animate({opacity:1},0,function(){
+                    $(this).fadeIn();
+                });
+                $(".img8_11").stop(true,true).delay(2500).animate({opacity:1},0,function(){
+                    $(this).fadeIn();
+                });
+                $(".img_hengxian1").stop(true,true).delay(2000).animate({opacity:1},0,function(){
+                    $(this).fadeIn();
+                });
+                $(".img_hengxian2").stop(true,true).delay(3000).animate({opacity:1},0,function(){
+                    $(this).fadeIn();
+                });
+                $(".wenzi3").stop(true,true).delay(3500).animate({opacity:1},0,function(){
+                    $(this).fadeIn();
+                });
+            });
+            break;
+        }
+    } ,
+    onSlideChangeStart:function(swiper){ 
+        if(swiper.activeIndex != 0){
+            $(".img1_2").stop(true,true).removeClass("biankuang").css("opacity",0);
+            $(".img1_3").stop(true,true).removeClass("tu1").css("opacity",0);
+            $(".img1_4").stop(true,true).removeClass("yezia").css("opacity",0);
+            $(".img1_5").stop(true,true).removeClass("yezib").css("opacity",0);
+            $(".img1_6").stop(true,true).removeClass("yezic").css("opacity",0);
+            $(".img1_7").stop(true,true).removeClass("yezid").css("opacity",0);
+            $(".img1_8").stop(true,true).removeClass("yezie").css("opacity",0);
+            $(".img1_9").stop(true,true).fadeOut();
+            $(".img1_10").stop(true,true).fadeOut();
+            $(".img1_11").stop(true,true).fadeOut();
+        }
+        if (swiper.activeIndex != 1) {
+            $(".img2_1").stop(true,true).css("left","0%");
+            $(".img2_2").stop(true,true).css("display","none").css("left","75%");
+            $("#content1").fadeOut();            
+            $(".img2_4").stop(true,true).animate({left:"100%"});
+        }
+        if(swiper.activeIndex != 2){
+            $(".img3_2").children().children().eq(0).stop(true,true).css("opacity",0);
+            $(".img3_2").children().children().eq(3).stop(true,true).css("opacity",0);
+            $(".img3_2").children().children().eq(1).stop(true,true).css("opacity",0);
+            $(".img3_2").children().children().eq(5).stop(true,true).css("opacity",0);
+            $(".img3_2").children().children().eq(4).stop(true,true).css("opacity",0);
+            $(".img3_2").children().children().eq(6).stop(true,true).css("opacity",0);
+            $(".img3_2").children().children().eq(7).stop(true,true).css("opacity",0).removeClass("bounceInDown animated");
+            $(".img3_2").children().children().eq(8).stop(true,true).css("opacity",0).removeClass("shake animated");
+            $(".img3_2").children().children().eq(2).css("opacity","0");
+            $("#content2").fadeOut();
+        }
+        if(swiper.activeIndex != 3){
+            $(".img4_10").stop(true,true).removeClass("rightin1").css("opacity",0);
+            $(".img4_11").stop(true,true).removeClass("rightin2").css("opacity",0);
+            $(".img4_2").stop(true,true).removeClass("leftin1").css("opacity",0);
+            $(".img4_3").stop(true,true).removeClass("leftin1").css("opacity",0);
+            $(".img4_5").stop(true,true).removeClass("leftin2").css("opacity",0);
+            $(".img4_6").stop(true,true).removeClass("leftin3").css("opacity",0);
+            $(".img4_8").stop(true,true).removeClass("leftin3").css("opacity",0);
+            $(".img4_9").stop(true,true).removeClass("leftin3").css("opacity",0);
+        }
+        if(swiper.activeIndex != 4){
+            $(".img5_8").stop(true,true).removeClass("fadeInDown animated").css("opacity",0);
+            $(".img5_2").stop(true,true).removeClass("fadeInUp animated").css("opacity",0);
+            $(".img5_3").stop(true,true).removeClass("fadeInUp animated").css("opacity",0);
+            $(".img5_5").stop(true,true).removeClass("fadeInUp animated").css("opacity",0);
+            $(".img5_7").stop(true,true).removeClass("fadeInUp animated").css("opacity",0);
+        }
+        if(swiper.activeIndex != 5){
+            $(".img6_2").stop(true,true).removeClass("fadeInLeft animated").css("opacity",0);
+            $(".img6_3").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+            $(".img6_4").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+            $(".img6_6").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+            $(".img6_8").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+            $(".img6_9").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+            $(".img6_10").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+            $(".img6_11").stop(true,true).removeClass("fadeInRight animated").css("opacity",0);
+        }
+        if (swiper.activeIndex != 6) {
+            $(".img7_1").stop(true,true).removeClass("fadeInUp animated").css("opacity",0);
+            $(".img7_2").stop(true,true).removeClass("fadeInDown animated").css("opacity",0);
+            $(".img7_3").stop(true,true).removeClass("fadeInDown animated").css("opacity",0);
+            $(".img7_5").stop(true,true).removeClass("fadeInDown animated").css("opacity",0);
+            $(".img7_7").stop(true,true).removeClass("fadeInDown animated").css("opacity",0);
+        };
+        if(swiper.activeIndex != 7){
+            $(".img8_2").stop(true,true).removeClass("biankuang").css("opacity",0);
+            $(".img8_3").stop(true,true).removeClass("tu1").css("opacity",0);
+            $(".img8_4").stop(true,true).removeClass("yezia").css("opacity",0);
+            $(".img8_5").stop(true,true).removeClass("yezib").css("opacity",0);
+            $(".img8_6").stop(true,true).removeClass("yezic").css("opacity",0);
+            $(".img8_7").stop(true,true).removeClass("yezid").css("opacity",0);
+            $(".img8_8").stop(true,true).removeClass("yezie").css("opacity",0);
+            $(".wenzi1").stop(true,true).css("opacity",0).removeClass("fadeIn animated");
+            $(".wenzi2").stop(true,true).css("opacity",0).removeClass("fadeIn animated");
+            $(".img8_9").stop(true,true).css("opacity",0).fadeOut();
+            $(".img8_10").stop(true,true).css("opacity",0).fadeOut();
+            $(".img8_11").stop(true,true).css("opacity",0).fadeOut();
+            $(".img_hengxian1").stop(true,true).css("opacity",0).fadeOut();
+            $(".img_hengxian2").stop(true,true).css("opacity",0).fadeOut();
+            $(".wenzi3").stop(true,true).css("opacity",0).fadeOut();
+        }
+    }
+    // 如果需要前进后退按钮
+    // nextButton: '.swiper-button-next',
+    // prevButton: '.swiper-button-prev',
+    
+    // 如果需要滚动条
+    // scrollbar: '.swiper-scrollbar',
+    // onSlideChangeEnd: function(Swiper) {
+    //     // console.log(swiper.activeIndex);
+    //     switch (swiper.activeIndex) {
+    //         case 0:
+    //         // $(".img1_4").addClass("yezi");
+    //         console.log(111);
+    //         // alert(111);
+    //         break;
+    //     }
+    // },
+})           
+
+$(function(){
+    var video=document.getElementById("video");
+    $(".btn").addClass("btnonclick");
+    $(".btn").click(function(){
+        if (video.paused) {
+            video.play();
+            $(".btn").addClass("btnonclick");
+        }
+        else{
+            video.pause();
+            $(".btn").removeClass("btnonclick");
+        }
+    })
+})
+</script>
+<style>
+@media screen and (max-width:540px){
+    .swiper-container {
+        width:100%;
+        height:100%;
+    }
+}
+</style>
+</body>
+</html>

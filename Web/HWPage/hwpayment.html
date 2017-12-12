@@ -109,121 +109,93 @@
 </html>
 <script src="js/hwlogin.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(function () {
+    
+    console.log(5495.36)
+    console.log(convertCurrency(5495.36));
 
-        $.modal({
-            text: "请确认支付已完成",
-            buttons: [
-      {
-          text: "已完成支付", onClick: function () {
-              //查询支付是否已完成
-              client.ajax.ajaxRequest("/HWServer/QueryPayState.ashx", res, function (r) {
-                  localStorage.removeItem("payTip");
-                  if (r.success) {
-                      //支付成功
-                      $('.PayContent').hide();
-                      $('.PayError').hide();
-                      $('.PaySuccess').show();
-                  }
-                  else {
-                      //支付失败
-                      $('.PayContent').hide();
-                      $('.PayError').show();
-                      $('.PaySuccess').hide();
-                  }
-              });
-          }
-      },
-      {
-          text: "未支付重新下单", className: "default", onClick: function () {
-              localStorage.removeItem("payTip");
-              location.href = "/hwpay.html";
-          }
-      }
-            ]
-        });
-
-
-        //初始化页面
-        function initpage() {
-            var payTip = localStorage.getItem("payTip");
-            if (payTip) {
-                var res = JSON.parse(localStorage.getItem("payTip"));
-                //支付同步回调
-                $.modal({
-                    text: "请确认支付已完成",
-                    buttons: [
-              {
-                  text: "已完成支付", onClick: function () {
-                      //查询支付是否已完成
-                      client.ajax.ajaxRequest("/HWServer/QueryPayState.ashx", res, function (r) {
-                          localStorage.removeItem("payTip");
-                          if (r.success) {
-                              //支付成功
-                              $('.PayContent').hide();
-                              $('.PayError').hide();
-                              $('.PaySuccess').show();
-                          }
-                          else {
-                              //支付失败
-                              $('.PayContent').hide();
-                              $('.PayError').show();
-                              $('.PaySuccess').hide();
-                          }
-                      });
-                  }
-              },
-              {
-                  text: "未支付重新下单", onClick: function () {
-                      localStorage.removeItem("payTip");
-                  }
-              }
-                    ]
-                });
-            }
+    function convertCurrency(money) {
+        //汉字的数字
+        var cnNums = new Array('零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖');
+        //基本单位
+        var cnIntRadice = new Array('', '拾', '佰', '仟');
+        //对应整数部分扩展单位
+        var cnIntUnits = new Array('', '万', '亿', '兆');
+        //对应小数部分单位
+        var cnDecUnits = new Array('角', '分', '毫', '厘');
+        //整数金额时后面跟的字符
+        var cnInteger = '整';
+        //整型完以后的单位
+        var cnIntLast = '元';
+        //最大处理的数字
+        var maxNum = 999999999999999.9999;
+        //金额整数部分
+        var integerNum;
+        //金额小数部分
+        var decimalNum;
+        //输出的中文金额字符串
+        var chineseStr = '';
+        //分离金额后用的数组，预定义
+        var parts;
+        if (money == '') { return ''; }
+        money = parseFloat(money);
+        if (money >= maxNum) {
+            //超出最大处理数字
+            return '';
         }
-        //页面初始化
-        initpage();
-
-        //1-支付宝 2-微信
-        //支付事件绑定
-        var orderInfo = localStorage.getItem("orderinfo");
-        if (orderInfo == null) {
-            return $.toast("参数错误", "cancel");
+        if (money == 0) {
+            chineseStr = cnNums[0] + cnIntLast + cnInteger;
+            return chineseStr;
+        }
+        //转换为字符串
+        money = money.toString();
+        if (money.indexOf('.') == -1) {
+            integerNum = money;
+            decimalNum = '';
         } else {
-            orderInfo = JSON.parse(orderInfo);
-            $('.productname').text(orderInfo.product_name);
-            $('.mobile').text(orderInfo.mobile);
-            $('.price').text(parseFloat(orderInfo.price).toFixed(2) + "元");
+            parts = money.split('.');
+            integerNum = parts[0];
+            decimalNum = parts[1].substr(0, 4);
         }
-        $('.bing').on("click", function () {
-            var pay_type = $('input[name=pay]:checked').val();
-//            if (pay_type == 2 && !hw_IsExitApp()) {
-//                return $.toast("手机上没有安装微信", "text");
-//            }
-            if (orderInfo) {
-                if (parseFloat(orderInfo.price) < 0.01)
-                    return $.toast("支付金额错误", "cancel");
-                orderInfo.pay_type = pay_type;
-                $.showLoading("支付请求中");
-                client.ajax.ajaxRequest("/HWServer/PayRequestHandler.ashx", { orderInfo: JSON.stringify(orderInfo) }, function (r) {
-                    $.hideLoading();
-                    if (r.success) {
-                        localStorage.setItem("payTip", JSON.stringify({ orderno: r.orderno, appid: r.appid, account_type: r.account_type }));
-                        if (orderInfo.pay_type == 2) {
-                            //微信支付跳转链接
-                            location.href = r.url;
-                        }
-                        else {
-                            //支付宝支付表单提交
-                            $('#zfb').html(r.url);
-                        }
+        //获取整型部分转换
+        if (parseInt(integerNum, 10) > 0) {
+            var zeroCount = 0;
+            var IntLen = integerNum.length;
+            for (var i = 0; i < IntLen; i++) {
+                var n = integerNum.substr(i, 1);
+                var p = IntLen - i - 1;
+                var q = p / 4;
+                var m = p % 4;
+                if (n == '0') {
+                    zeroCount++;
+                } else {
+                    if (zeroCount > 0) {
+                        chineseStr += cnNums[0];
                     }
-                    else {
-                        $.toast(r.info, "cancel");
-                    }
-                });
+                    //归零
+                    zeroCount = 0;
+                    chineseStr += cnNums[parseInt(n)] + cnIntRadice[m];
+                }
+                if (m == 0 && zeroCount < 4) {
+                    chineseStr += cnIntUnits[q];
+                }
             }
-        });
-    });
+            chineseStr += cnIntLast;
+        }
+        //小数部分
+        if (decimalNum != '') {
+            var decLen = decimalNum.length;
+            for (var i = 0; i < decLen; i++) {
+                var n = decimalNum.substr(i, 1);
+                if (n != '0') {
+                    chineseStr += cnNums[Number(n)] + cnDecUnits[i];
+                }
+            }
+        }
+        if (chineseStr == '') {
+            chineseStr += cnNums[0] + cnIntLast + cnInteger;
+        } else if (decimalNum == '') {
+            chineseStr += cnInteger;
+        }
+        return chineseStr;
+    }
 </script>

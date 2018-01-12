@@ -10,7 +10,9 @@ using log4net.Appender;
 using log4net.Repository;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
+using System.Security.Cryptography;
+using System.Text;
+using TenpaySdk;
 
 namespace Web.Controllers
 {
@@ -168,5 +170,84 @@ namespace Web.Controllers
         {
             return View();
         }
+
+
+        public void async()
+        {
+
+        }
+
+        public void success()
+        {
+
+        }
+
+        /// <summary>
+        /// 支取请求
+        /// </summary>
+        public void PayRequest()
+        {
+            string version = "1.0";
+            string merchantaccount = "HAO001";
+            string orderno = "CC" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            int amount = 100;
+            string currency = "CNY";
+            string membername = "a123456";
+            string memberip = "127.0.0.1";
+            string bankcode = "CN_ICBC";
+            string ordertime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string serverreturnurl = "http://jialimall.vicp.io/Default/async";
+            string memberreturnurl = "http://jialimall.vicp.io/Default/success";
+            string key = "u&e2@UQsF&5Tfg";
+
+            string signStr = string.Format(@"version={0}&merchantaccount={1}&orderno={2}&amount={3}&currency={4}&membername={5}&memberip={6}&bankcode={7}&ordertime={8}&serverreturnurl={9}&memberreturnurl={10}&key={11}"
+                                             , version, merchantaccount, orderno, amount, currency
+                                             , membername, memberip, bankcode, ordertime, serverreturnurl
+                                             , memberreturnurl, key);
+
+
+            string sign = SHA1(signStr);//签名
+            //参数
+            //dynamic obj= new System.Dynamic.ExpandoObject();
+            //obj.version = version;
+            //obj.merchantaccount = merchantaccount;
+            //obj.orderno = orderno;
+            //obj.amount = amount;
+            //obj.currency = currency;
+            //obj.membername = membername;
+            //obj.memberip = memberip;
+            //obj.bankcode = bankcode;
+            //obj.ordertime = ordertime;
+            //obj.serverreturnurl = serverreturnurl;
+            //obj.memberreturnurl = memberreturnurl;
+            //obj.digest = sign;
+            //string parStr = JsonConvert.SerializeObject(obj);
+            string parStr = string.Format(@"version={0}&merchantaccount={1}&orderno={2}&amount={3}&currency={4}&membername={5}&memberip={6}&bankcode={7}&ordertime={8}&serverreturnurl={9}&memberreturnurl={10}&digest={11}"
+                                            , version, merchantaccount, orderno, amount, currency
+                                            , membername, memberip, bankcode, ordertime, serverreturnurl
+                                            , memberreturnurl, sign);
+            string url ="https://www.grabbuy988.com/ddt.jsp";
+            string result=TenpayHelp.HttpPost(url, parStr);
+            Response.Write(result);
+        }
+
+        public  string SHA1(string input)
+        {
+            SHA1 shaHash = System.Security.Cryptography.SHA1.Create();
+            byte[] data = shaHash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString().ToUpper();
+        }
+
+
+        public void httpTest()
+        {
+            var res=TenpayHelp.HttpPost("http://localhost:39251/User/TimeOut", string.Empty);
+        }
+
     }
 }

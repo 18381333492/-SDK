@@ -206,15 +206,17 @@ namespace TenpaySdk
         /// <returns></returns>
         public static string HttpPost(string sUrl, string PostData, bool isUseCert = false, TenpayConfig config=null)
         {
-            byte[] bPostData = System.Text.Encoding.UTF8.GetBytes(PostData);
+            byte[] bPostData = System.Text.Encoding.GetEncoding("GBK").GetBytes("{\"version\":11,\"merchantaccount\":22}");
             string sResult = string.Empty;
             try
             {
                 HttpWebRequest webRequest = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(sUrl);
                 webRequest.ProtocolVersion = HttpVersion.Version10;
                 webRequest.Timeout = 30000;
-                webRequest.Method = "POST";
+                webRequest.Method = WebRequestMethods.Http.Post;
                 webRequest.Headers.Add("Accept-Encoding", "gzip, deflate");
+                webRequest.Headers.Add("myauto", "fdsfd");
+                webRequest.ContentType= "application/x-www-form-urlencoded;charset=gbk";//模拟表单提交必须添加ContentType;
 
                 if (isUseCert && config!=null)
                 {//微信退款需要证书

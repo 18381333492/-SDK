@@ -246,6 +246,7 @@ namespace Web.Controllers
 
         public void httpTest()
         {
+            var kk =new  List<Dictionary<string, object>>();
             var res=TenpayHelp.HttpPost("http://localhost:39251/User/TimeOut", string.Empty);
         }
 

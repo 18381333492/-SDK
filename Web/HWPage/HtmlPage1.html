@@ -22,6 +22,13 @@
 </script>
 <script type="text/javascript">
 
+    var time = new Date("2017/1/1 00:00:00");//定义一个时间
+    var nowtime = new Date();//获取当前时间
+
+    //获取相差总秒数
+    var second =parseInt((nowtime.getTime() - time.getTime())/1000);
+
+
     //$.ajax({
     //    url: 'http://imgserver.ltgirl.com:9110/upload/picture.ashx',
     //    data: null,

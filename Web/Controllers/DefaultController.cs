@@ -108,6 +108,7 @@ namespace Web.Controllers
         /// <returns></returns>
         public ActionResult GetHomeInfo()
         {
+            DateTime.Now.ToString("yyyyMMddhhmmssfff");
             Response.AppendHeader("Access-Control-Allow-Origin", "*");
             JObject job = new JObject();
             job.Add(new JProperty("totalBalance", 15000.00));

@@ -166,6 +166,10 @@
     <Content Include="log4net.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="slowpage\activity.html" />
+    <Content Include="slowpage\backgroud.jpg" />
+    <Content Include="slowpage\backgroud1.jpg" />
+    <Content Include="slowpage\btn.png" />
     <Content Include="倒计时\css\normalize.css" />
     <Content Include="倒计时\css\style.css" />
     <Content Include="倒计时\index.html" />
@@ -204,6 +208,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Default\type.cshtml" />
+    <Content Include="slowpage\压缩.zip" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

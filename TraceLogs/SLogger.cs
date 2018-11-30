@@ -10,12 +10,17 @@ namespace TraceLogs
 {
     public class SLogger:ILogger
     {
-
+       
         private string m_fileName;
 
         private string basePath;
 
         public string dir;
+
+        private object _info_lock = new object();
+        private object _fatal_lock = new object();
+        private object _warn_lock = new object();
+        private object _error_lock = new object();
 
         /// <summary>
         /// 初始化构造函数
@@ -32,25 +37,37 @@ namespace TraceLogs
         public void Info(object msg)
         {
             string message = Format(msg, LoggerLevel.Info.ToString());
-            File.AppendAllText(m_fileName, message);
+            lock (_info_lock)
+            {
+                File.AppendAllText(m_fileName, message);
+            }
         }
 
         public void Warn(object msg)
         {
             string message = Format(msg, LoggerLevel.Warn.ToString());
-            File.AppendAllText(m_fileName, message);
+            lock (_warn_lock)
+            {
+                File.AppendAllText(m_fileName, message);
+            }
         }
 
         public void Error(object msg)
         {
             string message = Format(msg, LoggerLevel.Error.ToString());
-            File.AppendAllText(m_fileName, message);
+            lock (_error_lock)
+            {
+                File.AppendAllText(m_fileName, message);
+            }
         }
 
         public void Fatal(object msg)
         {
             string message = Format(msg, LoggerLevel.Fatal.ToString());
-            File.AppendAllText(m_fileName, message);
+            lock (_fatal_lock)
+            {
+                File.AppendAllText(m_fileName, message);
+            }
         }
 
         /// <summary>
@@ -58,7 +75,8 @@ namespace TraceLogs
         /// </summary>
         private string Format(object obj, string category)
         {
-            string sPath = this.basePath + "\\" + category + "\\";
+            string Date = DateTime.Now.ToString("yyyy-MM");
+            string sPath = this.basePath + "\\" + category + "\\"+ Date+"\\";
             if (!Directory.Exists(sPath))
                 Directory.CreateDirectory(sPath);
             this.m_fileName = sPath + DateTime.Now.ToString("yyyy-MM-dd") + ".log";

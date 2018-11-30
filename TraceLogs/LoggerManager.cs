@@ -14,13 +14,6 @@ namespace TraceLogs
     public class LoggerManager
     {
         private static LoggerManager instance;
-
-        private static Logger logger;
-
-        private static SLogger slogger;
-
-        private static object _lock = new object();
-
         //缓存
         private static List<SLogger> CacheList = new List<SLogger>();
 
@@ -32,17 +25,6 @@ namespace TraceLogs
                     instance =new LoggerManager();
                 return instance;
             }
-        }
-
-        /// <summary>
-        /// 获取logger
-        /// </summary>
-        /// <returns></returns>
-        public ILogger GetLogger()
-        {
-            if (logger == null)
-                logger = new Logger();
-            return logger;
         }
 
 
@@ -65,18 +47,15 @@ namespace TraceLogs
         /// <returns></returns>
         private SLogger Get(string dir)
         {
-            lock (_lock)
-            {
-                if (slogger!=null&&CacheList.Any(m => m.dir == dir))
-                {//存在直接返回
-                    slogger = CacheList.FirstOrDefault(m => m.dir == dir);
-                }
-                else
-                {//不存在
-                    slogger = new SLogger(dir);
-                    CacheList.Add(slogger);//添加到缓存
-                }
-                return slogger;
+            if (CacheList.Any(m => m.dir == dir))
+            {//存在直接返回
+                return CacheList.FirstOrDefault(m => m.dir == dir);
+            }
+            else
+            {//不存在
+                SLogger logger = new SLogger(dir);
+                CacheList.Add(logger);//添加到缓存
+                return logger;
             }
         }
 

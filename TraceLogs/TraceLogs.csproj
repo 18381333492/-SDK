@@ -44,8 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILogger.cs" />
-    <Compile Include="LogerTraceListener.cs" />
-    <Compile Include="Logger.cs" />
     <Compile Include="LoggerLevel.cs" />
     <Compile Include="LoggerManager.cs" />
     <Compile Include="SLogger.cs" />
